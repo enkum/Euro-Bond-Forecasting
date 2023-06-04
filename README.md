@@ -10,4 +10,4 @@ developed by Michael Pokojovy, Ebenezer Nkum and Thomas M. Fullerton, Jr.
 Run main.m file. Adjust settings if necessary.
 
 Copyright: Ebenezer Nkum, Michael Pokojovy and Thomas M. Fullerton, Jr. (2022)
-See license for license terms and conditions
+See license for license terms and condition
