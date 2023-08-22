@@ -8,7 +8,7 @@
 rng(1);
 
 % Loading and plotting 2018 data
-yield2018 = readmatrix("yield_2018_11_new.csv");
+yield2018 = readmatrix("yield_2018_euro_yield.csv");
  
 yield2018 = yield2018(:, 3:(end - 1));
 
@@ -35,7 +35,7 @@ end
 
 
 % %% Loading 2019 data
-yield2019 = readmatrix("yield_2019_11_new.csv");
+yield2019 = readmatrix("yield_2018_euro_yield.csv");
 yield2019 = yield2019(:, 3:(end - 1));
 % 
 %T=1:364;
