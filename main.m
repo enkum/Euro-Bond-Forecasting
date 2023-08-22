@@ -7,24 +7,51 @@
 %% Set random seed for reproducibility
 rng(1);
 
-%% Loading and plotting 2018 data
-yield2018 = readmatrix("yield2018.csv");
+% Loading and plotting 2018 data
+yield2018 = readmatrix("yield_2018_11_new.csv");
  
-yield2018 = yield2018(:, 2:(end - 1));
+yield2018 = yield2018(:, 3:(end - 1));
 
-[n, p] = size(yield2018);
+%search for where the data is empty
+T=1:364;
+dif=setdiff(T,find(isnan(yield2018(1:364,3))));
+U=find(isnan(yield2018(1:364,3)));
 
-[~, ind_nan] = min(isnan(yield2018(:, 2)));
-ind_nan = ind_nan - 1;
-
-month = [1 2 3 6];
-month = [month 12*[1 2 3 5 7 10 20 30]];
+for p=1:length(U)
+    for k=3:25
+        yield2018(U(p), k)=interp1(dif, yield2018(dif,k), U(p),'linear','extrap');
+    end 
+end
+[n, l] = size(yield2018);
+month = [1 2 3 4 5 6 7 8 9 10 11 12*[1 2 3 4 5 6 7 8 9 10 15 20 25 30]];
 
 I = 1:length(month);
-I = setdiff(I, 2);
-for i = 1:ind_nan
-    yield2018(i, 2) = interp1(month(I), yield2018(i, I), month(2));
+I = setdiff(I, [1 2]);
+for i = 1:n
+    yield2018(i, 1) = interp1(month(I), yield2018(i, I), month(1),'linear','extrap');
+    yield2018(i, 2) = interp1(month(I), yield2018(i, I), month(2),'linear','extrap');
 end
+
+
+
+% %% Loading 2019 data
+yield2019 = readmatrix("yield_2019_11_new.csv");
+yield2019 = yield2019(:, 3:(end - 1));
+% 
+%T=1:364;
+dif=setdiff(T,find(isnan(yield2019(1:364,3))));
+U=find(isnan(yield2019(1:364,3)));
+for p=1:length(U)
+    for k=3:25
+        yield2019(U(p), k)=interp1(dif, yield2019(dif,k), U(p),'linear','extrap');
+    end 
+end
+[q, h] = size(yield2019);
+for i = 1:q
+    yield2019(i, 1) = interp1(month(I), yield2019(i, I), month(1),'linear','extrap');
+    yield2019(i, 2) = interp1(month(I), yield2019(i, I), month(2),'linear','extrap');
+end
+
 
 time_grid    = (1:n)*(12/n);
 horizon_grid = month;
