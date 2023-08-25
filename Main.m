@@ -1,6 +1,6 @@
-% Copyright   : Michael Pokojovy & Valerii Maltsev (2020)
-% Version     : 2.0
-% Last edited : 11/27/2020
+% Copyright   : Ebenezer Nkum, Michael Pokojovy & Thomas M Fullerton (2023)
+% Version     : 1.0
+% Last edited : 08/26/2023
 % License     : Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 %               https://creativecommons.org/licenses/by-sa/4.0/
 
