@@ -121,7 +121,7 @@ ylabel({'Time to maturity $x$', '(in months)'}, 'FontSize', 25, 'interpreter', '
 zlabel({'Integrated forward rate $Y(t, x)$', '(in $\% \times \textrm{month}$)'}, 'FontSize', 25, 'interpreter', 'latex');
 
 %% Estimation of Vasicek's model
-C = yield_obs(:, 1);
+r_obs = yield_obs(:, 1);
 [alpha_hat, r_ast_hat, beta_hat] = Vasicek_inv_map(T_grid, yield_obs(:, 1));
 display(['Vasicek''s model: alpha-hat = ', num2str(alpha_hat), ...
          ', r*-hat = ', num2str(r_ast_hat), ', beta-hat = ', num2str(beta_hat)]);
