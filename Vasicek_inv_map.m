@@ -1,6 +1,6 @@
-% Copyright   : Michael Pokojovy & Valerii Maltsev (2020)
-% Version     : 2.0
-% Last edited : 11/27/2020
+% Copyright   : Ebenezer Nkum, Michael Pokojovy & Thomas M Fullerton (2023)
+% Version     : 1.0
+% Last edited : 08/26/2023
 % License     : Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 %               https://creativecommons.org/licenses/by-sa/4.0/
 
@@ -16,7 +16,8 @@ function [alpha_hat, r_ast_hat, beta_hat] = Vasicek_inv_map(T_grid, r_obs)
     
     expa  = exp(alpha_hat*dt);
     expai = 1.0/expa;
-    r_ast_hat = 1/(m*(1 - expai))*(sum(r_cur) - expa*sum(r_lag));
+    
+    r_ast_hat = 1/(m*(1 - expai))*(sum(r_cur) - expai*sum(r_lag));
     
     beta_hat = sqrt(2*alpha_hat/(m*(1 - expai^2))*sum((r_cur - r_lag*expai - r_ast_hat*(1 - expai)).^2));
 end
