@@ -1,4 +1,4 @@
-% Copyright   : Ebenezer Nkum, Michael Pokojovy & Thomas M Fullerton (2023)
+% Copyright   : Ebenezer Nkum,Michael Pokojovy, and Thomas M. Fullerton, Jr. (2023)
 % Version     : 1.0
 % Last edited : 08/26/2023
 % License     : Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
