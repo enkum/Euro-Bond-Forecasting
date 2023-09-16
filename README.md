@@ -1,6 +1,6 @@
 #########################################################################
-# Forecasting Euro Area Yield Curves Using the Heath-Jarrow-Morton Model  #
-# (C) Ebenezer Nkum,Michael Pokojovy, and Thomas M. Fullerton, Jr. (2023) #
+#Forecasting Euro Area Yield Curves Using the Heath-Jarrow-Morton Model#
+#(C) Ebenezer Nkum,Michael Pokojovy, and Thomas M. Fullerton, Jr. (2023)#
 ##########################################################################
 
 This Matlab package implements the estimating of the inverse 
