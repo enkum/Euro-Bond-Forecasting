@@ -12,7 +12,7 @@ yield2018 = readmatrix("yield_2018_euro_yield.csv");
  
 yield2018 = yield2018(:, 3:(end - 1));
 
-%search for where the data is empty
+%search for where the data is empty (customize to the current data)
 T=1:364;
 dif=setdiff(T,find(isnan(yield2018(1:364,3))));
 U=find(isnan(yield2018(1:364,3)));
@@ -59,6 +59,7 @@ end
 time_grid    = (1:n)*(12/n);
 horizon_grid = month;
 
+% Plotting figures
 figure(1);
 set(gcf, 'PaperUnits', 'centimeters');
 xSize = 28; ySize = 16;
@@ -125,6 +126,7 @@ r_obs = yield_obs(:, 1);
 [alpha_hat, r_ast_hat, beta_hat] = Vasicek_inv_map(T_grid, yield_obs(:, 1));
 display(['Vasicek''s model: alpha-hat = ', num2str(alpha_hat), ...
          ', r*-hat = ', num2str(r_ast_hat), ', beta-hat = ', num2str(beta_hat)]);
+
 
 %% Inverse problem for the abstract Heath-Jarrow-Morton model
 [I_sigma_HJM_hat, lambda_HJM_hat,var_rat] = HJM_inv_map(T_grid, X_grid, Y_obs, r_obs, 0.99);
